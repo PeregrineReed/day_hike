@@ -1,0 +1,13 @@
+<%= @trip.name %>
+<% @trails.each do |trail| %>
+  <%= link_to trail.name, trail_path(trail) %>
+  <%= trail.length %>
+  <%= trail.address %>
+<% end %>
+
+<% if @trails != [] %>
+  Total Trail Length: <%= @trip.total_trail_length %>
+  Average Trail Length: <%= @trip.avg_trail_length %>
+  Longest Trail: <%= @trip.longest_trail.name %>, Length: <%= @trip.longest_trail.length %>
+  Shortest Trail: <%= @trip.shortest_trail.name %>, Length: <%= @trip.shortest_trail.length %>
+<% end %>
